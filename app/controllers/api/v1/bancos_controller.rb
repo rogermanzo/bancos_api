@@ -19,22 +19,22 @@ class Api::V1::BancosController < ApplicationController
 
   # GET /api/v1/bancos/cercano
   def cercano
-    latitud = params[:latitud].to_f
-    longitud = params[:longitud].to_f
+    latitude = params[:latitud].to_f
+    longitude = params[:longitud].to_f
     
-    if latitud.zero? || longitud.zero?
+    if latitude.zero? || longitude.zero?
       render json: { error: 'Latitud y longitud son requeridas' }, status: :bad_request
       return
     end
 
     # Usar directamente el servicio
-    finder = NearestBankFinder.new(latitud, longitud)
-    banco_cercano, distancia = finder.find
+    finder = NearestBankFinder.new(latitude, longitude)
+    nearest_bank, distance = finder.find
     
-    if banco_cercano
+    if nearest_bank
       render json: {
-        banco: banco_cercano,
-        distancia_km: distancia.round(2)
+        banco: nearest_bank,
+        distancia_km: distance.round(2)
       }
     else
       render json: { error: 'No se encontraron bancos' }, status: :not_found

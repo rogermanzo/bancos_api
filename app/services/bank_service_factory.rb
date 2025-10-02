@@ -1,9 +1,9 @@
 class BankServiceFactory
-  def self.create_nearest_bank_finder(latitud, longitud, options = {})
+  def self.create_nearest_bank_finder(latitude, longitude, options = {})
     distance_calculator = options[:distance_calculator] || DistanceCalculator.new
     logger = options[:logger] || DistanceLogger.new
 
-    NearestBankFinder.new(latitud, longitud, 
+    NearestBankFinder.new(latitude, longitude, 
                          distance_calculator: distance_calculator, 
                          logger: logger)
   end

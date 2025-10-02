@@ -1,7 +1,7 @@
 class NearestBankFinder
-  def initialize(latitud, longitud, distance_calculator: DistanceCalculator.new, logger: DistanceLogger.new)
-    @latitud = latitud
-    @longitud = longitud
+  def initialize(latitude, longitude, distance_calculator: DistanceCalculator.new, logger: DistanceLogger.new)
+    @latitude = latitude
+    @longitude = longitude
     @distance_calculator = distance_calculator
     @logger = logger
   end
@@ -18,7 +18,7 @@ class NearestBankFinder
   private
 
   def invalid_coordinates?
-    @latitud.zero? && @longitud.zero?
+    @latitude.zero? && @longitude.zero?
   end
 
   def find_nearest_bank(banks)
@@ -26,7 +26,7 @@ class NearestBankFinder
     min_distance = Float::INFINITY
 
     banks.each do |bank|
-      distance = @distance_calculator.calculate(@latitud, @longitud, bank.latitud, bank.longitud)
+      distance = @distance_calculator.calculate(@latitude, @longitude, bank.latitud, bank.longitud)
       
       if distance < min_distance
         min_distance = distance
