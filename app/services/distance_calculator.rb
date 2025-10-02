@@ -1,6 +1,4 @@
 class DistanceCalculator
-  include DistanceCalculatorInterface
-
   # Radio de la Tierra en kilómetros
   EARTH_RADIUS = 6371.0
 

@@ -1,5 +1,5 @@
 class NearestBankFinder
-  def initialize(latitud, longitud, distance_calculator: DistanceCalculator.new, logger: DistanceLogger)
+  def initialize(latitud, longitud, distance_calculator: DistanceCalculator.new, logger: DistanceLogger.new)
     @latitud = latitud
     @longitud = longitud
     @distance_calculator = distance_calculator

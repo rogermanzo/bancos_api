@@ -1,6 +1,4 @@
 class DistanceLogger
-  include LoggerInterface
-
   WARNING_THRESHOLD = 10.0 # km
 
   def log_if_far(distance)

@@ -27,7 +27,9 @@ class Api::V1::BancosController < ApplicationController
       return
     end
 
-    banco_cercano, distancia = Bank.banco_mas_cercano(latitud, longitud)
+    # Usar directamente el servicio
+    finder = NearestBankFinder.new(latitud, longitud)
+    banco_cercano, distancia = finder.find
     
     if banco_cercano
       render json: {
