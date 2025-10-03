@@ -5,7 +5,7 @@ gem "rails", "~> 7.2.0"
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", "~> 1.4", platforms: %i[ ruby mingw x64_mingw ]
 # Use the Puma web server [https://github.com/puma/puma]
-gem "puma", "~> 6.0"
+gem "puma", "~> 7.0"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
 # Use Redis adapter to run Action Cable in production
