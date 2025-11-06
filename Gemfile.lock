@@ -261,7 +261,7 @@ GEM
       rubocop-rails (>= 2.30)
     ruby-progressbar (1.13.0)
     securerandom (0.4.1)
-    sqlite3 (1.7.3)
+    sqlite3 (2.8.0)
       mini_portile2 (~> 2.8.0)
     sshkit (1.24.0)
       base64
@@ -301,7 +301,7 @@ DEPENDENCIES
   rails (~> 7.2.0)
   rspec-rails (~> 7.0)
   rubocop-rails-omakase
-  sqlite3 (~> 1.4)
+  sqlite3 (~> 2.8)
   thruster
   tzinfo-data
 
